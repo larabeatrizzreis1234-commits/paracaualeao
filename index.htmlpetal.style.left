@@ -1,0 +1,211 @@
+# paracaualeao
+Site especial para o meu amor Cauã Santos Leão 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Para você 🤍</title>
+
+  <!-- Fontes delicadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fde2e4, #e0f2f1, #ede7f6);
+      background-size: 400% 400%;
+      animation: gradient 12s ease infinite;
+      overflow-x: hidden;
+      color: #555;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #e91e63;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* Música */
+    .music {
+      margin: 50px 0;
+    }
+
+    .music a {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 30px;
+      background: #f8bbd0;
+      color: #880e4f;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .music a:hover {
+      background: #f48fb1;
+    }
+
+    /* Galeria */
+    .gallery {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .photo {
+      background: rgba(255,255,255,0.7);
+      padding: 15px;
+      border-radius: 20px;
+    }
+
+    .photo img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .photo span {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Corações e pétalas */
+    .heart, .petal {
+      position: fixed;
+      top: -10px;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    .heart {
+      font-size: 20px;
+    }
+
+    .petal {
+      font-size: 18px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Para você 🤍</h1>
+
+    <p>
+      Aquelas nossas conversas longas de madrugada, as risadas que você me tirava,
+      isso me apaixonava todo dia mais.
+    </p>
+
+    <p>
+      Seu abraço é a coisa mais gostosa que eu já senti.
+      Eu poderia te abraçar, beijar e te sentir todos os dias da minha vida
+      que nunca enjoaria.
+    </p>
+
+    <!-- Música -->
+    <div class="music">
+      <p><strong>Clique aqui para ouvir nossa música</strong></p>
+      <a href="COLE_AQUI_O_LINK_DA_MUSICA" target="_blank">🎵 Ouvir</a>
+    </div>
+
+    <!-- Fotos -->
+    <div class="gallery">
+      <div class="photo">
+        <img src="foto1.jpg">
+        <span>Coisa que eu mais gosto de fazer, beijar o rosto do meu amor.</span>
+      </div>
+
+      <div class="photo">
+        <img src="foto2.jpg">
+        <span>Você e o pôr do sol, duas coisas que sou apaixonada.</span>
+      </div>
+
+      <div class="photo">
+        <img src="foto3.jpg">
+        <span>Eu achava meus olhos os mais lindos do mundo, até encontrar os seus.</span>
+      </div>
+
+      <div class="photo">
+        <img src="foto4.jpg">
+        <span>Dormindo no lugar mais seguro do mundo, você.</span>
+      </div>
+    </div>
+
+    <p style="margin-top:40px;">
+      Com amor,<br>
+      <strong>Lara Beatriz</strong>
+    </p>
+  </div>
+
+  <script>
+    const hearts = ["💗","💖","💕","🤍"];
+    const petals = ["🌸","🌷","🌺","💐"];
+
+    function createHeart() {
+      const h = document.createElement("div");
+      h.className = "heart";
+      h.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+      h.style.left = Math.random() * 100 + "vw";
+      h.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 10000);
+    }
+
+    function createPetal() {
+      const p = document.createElement("div");
+      p.className = "petal";
+      p.innerText = petals[Math.floor(Math.random() * petals.length)];
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDuration = (6 + Math.random() * 6) + "s";
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 12000);
+    }
+
+    setInterval(createHeart, 500);
+    setInterval(createPetal, 700);
+  </script>
+
+</body>
+  </html>
